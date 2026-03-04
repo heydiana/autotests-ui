@@ -4,16 +4,56 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        h6 {
+            font-size: 15px
+        }
+
         .h2-text {
             color: red
+        }
+
+        .h6-text {
+            color: yellow
+        }
+
+        #h1-text {
+            font-size: 50px
+        }
+
+        div.python > a {
+            color: green
+        }
+
+        ul li {
+            color: green
+        }
+
+        input[type="text"] {
+            background-color: blue
+        }
+
+           input[type="text"]:hover {
+            background-color: green
+        }
+
+        a:hover {
+            color: red
+        }
+
+        li::marker {
+            color: red
+        }
+
+        ul > li:nth-child(2) {
+            color: blue
         }
     </style>
 </head>
 <body>
-<div>
+<div class="python">
     <h1 id="h1-text" > Title</h1>
     <h2 class="h2-text"> Title</h2>
-    <h6 class="h2-text"> Title</h6>
+    <h6 class="h2-text h6-text"> Title</h6>
     <p>Недавно устроившаяся на работу <span style="color: red">Ван Цуй Хуа</span> неожиданно попадает в мир романа, где её пути пересекаются с Чжан
         Санем,
         еще одним попанданцем - на этот раз скрытым королем, который выжидал своего часа в течение десяти лет.</p>
@@ -56,8 +96,20 @@
                 <td>Row3</td>
             </tr>
         </tbody>
-
     </table>
+    <div class="nth">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
 </div>
+<div class="javascript">
+    <h2 class="h2-text">H2 text</h2>
+    <a href="https://habr.com/ru/articles/975778/" target="blank">JavaScript</a>
+
+</div>
+
 </body>
 </html>
