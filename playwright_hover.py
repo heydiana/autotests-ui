@@ -1,4 +1,4 @@
-from playwright.sync_api import sync_playwright, expect
+from playwright.sync_api import sync_playwright
 
 with sync_playwright() as playwright:
     browser = playwright.chromium.launch(headless=False)
@@ -8,7 +8,7 @@ with sync_playwright() as playwright:
         "https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login"
     )
 
-    login_button = page.get_by_test_id("login-page-login-button")
-    expect(login_button).to_be_disabled()
+    registration_link = page.get_by_test_id("login-page-registration-link")
+    registration_link.hover()
 
     page.wait_for_timeout(5000)

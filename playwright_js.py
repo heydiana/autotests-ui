@@ -8,10 +8,10 @@ with sync_playwright() as playwright:
 
     page.goto(
         "https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login",
-        wait_until='networkidle'
+        wait_until="networkidle",
     )
 
-    next_text = 'Another Text'
+    next_text = "Another Text"
     page.evaluate(f"""
     const title = document.getElementById('authentication-ui-course-title-text');
     title.textContent = '{next_text}';
