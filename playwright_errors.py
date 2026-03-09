@@ -16,7 +16,4 @@ with sync_playwright() as playwright:
     #login_button = page.get_by_test_id('login-page-login-button')
     #login_button.fill("#unknown")
 
-    page.evaluate("""
-    const title = document.getElementById('authentication-ui-course-title-text');
-    title.textContent = 'git statusNew Text';
-    """)
+
