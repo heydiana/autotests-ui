@@ -10,21 +10,19 @@ class CoursesListPage(BasePage):
         self.courses_title = page.get_by_test_id('courses-list-toolbar-title-text')
         self.create_course_button = page.get_by_test_id('courses-list-toolbar-create-course-button')
 
-        self.courses_title = page.get_by_test_id('courses-widget-title-text')
-        self.courses_image = page.get_by_test_id('courses-preview-image')
-        self.courses_max_text = page.get_by_test_id('courses-max-score-info-row-view-text')
-        self.courses_min_text = page.get_by_test_id('courses-min-score-info-row-view-text')
-        self.courses_estimated_time_text = page.get_by_test_id('courses-estimated-time-info-row-view-text')
+        self.course_title = page.get_by_test_id('course-widget-title-text')
+        self.course_image = page.get_by_test_id('course-preview-image')
+        self.course_max_score_text = page.get_by_test_id('course-max-score-info-row-view-text')
+        self.course_min_score_text = page.get_by_test_id('course-min-score-info-row-view-text')
+        self.course_estimated_time_text = page.get_by_test_id('course-estimated-time-info-row-view-text')
 
-        self.courses_menu_button = page.get_by_test_id('courses-view-menu-button')
-        self.courses_edit_menu_button = page.get_by_test_id('courses-view-edit-menu-item')
-        self.courses_delete_button = page.get_by_test_id('courses-view-delete-menu-item')
+        self.course_menu_button = page.get_by_test_id('course-view-menu-button')
+        self.course_edit_menu_item = page.get_by_test_id('course-view-edit-menu-item')
+        self.course_delete_menu_item = page.get_by_test_id('course-view-delete-menu-item')
 
         self.empty_view_icon = page.get_by_test_id('courses-list-empty-view-icon')
         self.empty_view_title = page.get_by_test_id('courses-list-empty-view-title-text')
         self.empty_view_description = page.get_by_test_id('courses-list-empty-view-title-text')
-
-
 
 
     def check_visible_courses_title(self):
