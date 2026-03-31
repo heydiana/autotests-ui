@@ -11,12 +11,8 @@ def test_create_course(chromium_page_with_state):
     courses_list_page = CoursesListPage(page)
     create_course_page = CreateCoursePage(page)
 
-    # открыть список курсов
-    page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses")
-
-    # переход через UI
-    courses_list_page.create_course_button.click()
-    page.wait_for_url("**/courses/create")
+    # открыть создание курсов
+    page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create")
 
     # проверки до заполнения
     create_course_page.check_visible_create_course_title()
@@ -26,8 +22,8 @@ def test_create_course(chromium_page_with_state):
 
     create_course_page.check_visible_create_course_form(
         title="",
-        estimated_time="",
         description="",
+        estimated_time="",
         max_score="0",
         min_score="0"
     )
@@ -54,7 +50,6 @@ def test_create_course(chromium_page_with_state):
 
     # создание курса
     create_course_page.click_create_course_button()
-    page.wait_for_url("**/courses")
 
     # проверки на странице списка
     courses_list_page.check_visible_courses_title()
