@@ -1,11 +1,16 @@
 from playwright.sync_api import Page, expect
 
+from components.navigation.navbar_component import NavbarComponent
+from components.navigation.sidebar_component import SidebarComponent
 from pages.base_page import BasePage
 
 
 class CoursesListPage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
+
+        self.navbar = NavbarComponent(page)
+        self.sidebar = SidebarComponent(page)
 
         self.courses_title = page.get_by_test_id('courses-list-toolbar-title-text')
         self.create_course_button = page.get_by_test_id('courses-list-toolbar-create-course-button')
@@ -22,7 +27,7 @@ class CoursesListPage(BasePage):
 
         self.empty_view_icon = page.get_by_test_id('courses-list-empty-view-icon')
         self.empty_view_title = page.get_by_test_id('courses-list-empty-view-title-text')
-        self.empty_view_description = page.get_by_test_id('courses-list-empty-view-title-text')
+        self.empty_view_description = page.get_by_test_id('courses-list-empty-view-description-text')
 
 
     def check_visible_courses_title(self):
@@ -72,13 +77,13 @@ class CoursesListPage(BasePage):
     def click_edit_course(self, index: int):
         self.course_menu_button.nth(index).click()
 
-        expect(self.course_button_menu_item.nth(index)).to_be_visible()
-        self.course_edit_menu_button.nth(index).click()
+        expect(self.course_edit_menu_item.nth(index)).to_be_visible()
+        self.course_edit_menu_item.nth(index).click()
 
     def click_delete_course(self, index: int):
         self.course_menu_button.nth(index).click()
 
-        expect(self.course_delete_menu_button.nth(index)).to_be_visible()
-        self.course_delete_menu_button.nth(index).click()
+        expect(self.course_delete_menu_item.nth(index)).to_be_visible()
+        self.course_delete_menu_item.nth(index).click()
 
 
